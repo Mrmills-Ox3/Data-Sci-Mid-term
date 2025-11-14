@@ -3,13 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 ui=ui.page_fluid(
-    ui.output_text("header")
-    ui.output_plot("attendance_plot"))    
+ui.output_text("header"),
+ui.output_plot("attendance_plot"))    
                    
  def server(input, output, session):
-     @render.text("header")                  
+     @output
+     @render.text                  
 )    def header():
-            return "Attendance Over Time for History Module"
+         return "Attendance Over Time for History Module"
 
     @render.plot("attendance_plot")
     def attendance_plot():
@@ -19,4 +20,4 @@ ui=ui.page_fluid(
         ax.set_xlabel('Date')
         ax.set_ylabel('Not Attended')
         plt.xticks(rotation=45)
-        return fig  
+        return fig 
