@@ -2,6 +2,8 @@ from shiny import App, ui, render, reactive
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+
 ui=ui.page_fluid(
 ui.output_text("header"),
 ui.output_plot("attendance_plot"))    
